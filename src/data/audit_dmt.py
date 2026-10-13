@@ -23,6 +23,7 @@ import pandas as pd
 import matplotlib
 matplotlib.use("Agg")                       # draw to files, no window needed
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 
 MONTHS = ["January", "February", "March", "April", "May", "June", "July",
           "August", "September", "October", "November", "December"]
@@ -99,9 +100,12 @@ def main():
     dots = mon[mon.Source_was_dot.astype(str).str.lower() == "true"]
     say(f"- {len(dots)} months are '.' in the source (kept as missing, NOT zero; confirm meaning with DMT): " + ", ".join(dots.Period))
     s = mon.dropna(subset=["New_EV_registrations"]).copy()
-    s["ratio"] = s.New_EV_registrations / s.New_EV_registrations.shift(1)
-    for i, r in s[(s.New_EV_registrations.shift(1) >= 1000) & ((s.ratio > 1.8) | (s.ratio < 0.55))].iterrows():
-        say(f"- FLAG month-on-month jump {r.Period}: {int(s.New_EV_registrations.shift(1)[i])} -> {int(r.New_EV_registrations)} (x{r.ratio:.2f}); ask DMT whether real or a process/data change")
+    s["prev"] = s.New_EV_registrations.shift(1)
+    s["ratio"] = s.New_EV_registrations / s.prev
+    jumps = s[(s.prev >= 1000) & ((s.ratio > 1.8) | (s.ratio < 0.55))]
+    for r in jumps.to_dict("records"):          # plain dicts: no pandas typing surprises
+        say(f"- FLAG month-on-month jump {r['Period']}: {int(r['prev'])} -> {int(r['New_EV_registrations'])} "
+            f"(x{float(r['ratio']):.2f}); ask DMT whether real or a process/data change")
 
     # ---- 4 EV share
     say("\n## 4. EV share of new registrations (national, by vehicle class)")
@@ -150,10 +154,11 @@ def main():
     t = pd.PeriodIndex(s.Period, freq="M").to_timestamp()
     fig, ax = plt.subplots(figsize=(9, 4.2))
     ax.plot(t, s.New_EV_registrations, color=ACCENT, lw=2)
-    ax.axvline(pd.Timestamp("2025-02-01"), color=MUTED, ls="--", lw=1)
-    ax.text(pd.Timestamp("2025-01-10"), s.New_EV_registrations.max() * 0.97, "Feb 2025: import reopening",
-            color=MUTED, fontsize=9, va="top", ha="right")
-    ax.set_xlim(pd.Timestamp("2019-01-01"), t.max() + pd.Timedelta(days=45))
+    ax.axvline(float(mdates.date2num(pd.Timestamp("2025-02-01"))), color=MUTED, ls="--", lw=1)
+    ax.text(float(mdates.date2num(pd.Timestamp("2025-01-10"))), float(s.New_EV_registrations.max()) * 0.97,
+            "Feb 2025: import reopening", color=MUTED, fontsize=9, va="top", ha="right")
+    ax.set_xlim(float(mdates.date2num(pd.Timestamp("2019-01-01"))),
+                float(mdates.date2num(t.max() + pd.Timedelta(days=45))))
     ax.set_title("New EV registrations per month, Sri Lanka (DMT, private)", loc="left", color=INK)
     ax.set_ylabel("registrations"); fig.tight_layout(); fig.savefig(f"{a.figures}/f1_national_monthly.png", dpi=160); plt.close(fig)
 
@@ -166,8 +171,8 @@ def main():
 
     top = p25.head(10)[::-1]
     fig, ax = plt.subplots(figsize=(9, 4.4))
-    ax.barh(top.index, top.values, color=ACCENT, height=0.6); ax.grid(axis="y", visible=False)
-    for i, v in enumerate(top.values):
+    ax.barh([str(d) for d in top.index], top.to_numpy(), color=ACCENT, height=0.6); ax.grid(axis="y", visible=False)
+    for i, v in enumerate(top.to_numpy()):
         ax.text(v, i, f" {int(v):,}", va="center", fontsize=9, color=INK)
     ax.set_title("EV registrations in 2025 by district (top 10)", loc="left", color=INK)
     fig.tight_layout(); fig.savefig(f"{a.figures}/f3_districts_2025.png", dpi=160); plt.close(fig)
