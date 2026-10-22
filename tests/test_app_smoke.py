@@ -27,11 +27,11 @@ def test_app_runs_and_controls_change_numbers():
     at = AppTest.from_file(APP, default_timeout=60)
     at.run()
     assert not at.exception
-    assert any("EV Adoption Forecast" in t.value for t in at.title)
+    assert any("EV Adoption Forecast" in m.value for m in at.markdown)
     base = num(kpi(at, "district_evs"))
-    at.selectbox(key="lt_scenario").select("slow").run()
+    at.segmented_control(key="lt_scenario").set_value("slow").run()
     assert not at.exception and num(kpi(at, "district_evs")) < base
-    at.selectbox(key="lt_scenario").select("accelerated").run()
+    at.segmented_control(key="lt_scenario").set_value("accelerated").run()
     assert num(kpi(at, "district_evs")) > base
     before = kpi(at, "st_evs")
     at.selectbox(key="st_district").select("KANDY").run()
@@ -54,4 +54,7 @@ def test_area_tiles_show_the_town_numbers_from_the_file():
                        and r["scenario"] == "baseline" and r["year"] == 2030 and r["vehicle_class"] == cls)
         assert kpi(at, cls) == f"{expected:,.0f}"
     at.selectbox(key="lt_area").select("All areas").run()
-    assert not at.exception and kpi(at, "car") is None
+    assert not at.exception
+    whole = sum(r["new_evs"] for r in town if r["district"] == "COLOMBO" and r["scenario"] == "baseline"
+                and r["year"] == 2030 and r["vehicle_class"] == "car")
+    assert kpi(at, "car") == f"{whole:,.0f}"          # all areas: the tiles show the whole district

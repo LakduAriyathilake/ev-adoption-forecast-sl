@@ -65,8 +65,12 @@ def view_for(geo: dict[str, Any], codes: set[str]) -> tuple[dict[str, float], fl
     zoom = max(5.5, min(10.0, math.log2(360 * 1.2 / span) - 0.3))   # web maps: each +1 zoom halves the width shown
     return {"lon": (x0 + x1) / 2, "lat": (y0 + y1) / 2}, zoom
 
+DARK_RAMP = [[0, "#134e4a"], [0.35, "#0f9d7a"], [0.7, "#5eead4"], [1, "#ecfeff"]]      # dark map: low = deep teal, high = bright mint
+LIGHT_RAMP = [[0, "#e6f7f1"], [0.4, "#6fcfb0"], [0.75, "#12906b"], [1, "#064e3b"]]      # street map: low = pale, high = dark green
+
 def build_map(geo: dict[str, Any], values: dict[str, dict[str, float]], names: dict[str, tuple[str, str]],
-              focus_codes: set[str], selected: str | None, whole_island: bool, style: str = "open-street-map") -> go.Figure:
+              focus_codes: set[str], selected: str | None, whole_island: bool, dark: bool = True, height: int = 520) -> go.Figure:
+    """Dark = CARTO dark basemap, Street = OpenStreetMap. Both use OpenStreetMap data."""
     codes = [c for c in values if c in names]
     hover = []
     for c in codes:
@@ -75,13 +79,17 @@ def build_map(geo: dict[str, Any], values: dict[str, dict[str, float]], names: d
                      "<br>".join(f"{NAMES[k]}: {v[k]:,.0f}" for k in CLASSES) + f"<br><b>All: {v['total']:,.0f}</b>")
     fig = go.Figure(go.Choroplethmap(
         geojson=geo, locations=codes, featureidkey="properties.adm3_pcode", z=[values[c]["total"] for c in codes],
-        colorscale="YlGn", marker_opacity=0.75, marker_line_width=0.4, marker_line_color="#4b5563",
-        hovertext=hover, hoverinfo="text", colorbar={"title": "EVs", "thickness": 12, "len": 0.6}))
+        colorscale=DARK_RAMP if dark else LIGHT_RAMP, marker_opacity=0.82 if dark else 0.75, marker_line_width=0.4,
+        marker_line_color="#0b1b21" if dark else "#4b5563", hovertext=hover, hoverinfo="text",
+        colorbar={"orientation": "h", "thickness": 8, "len": 0.32, "x": 0.02, "xanchor": "left", "y": 0.03, "yanchor": "bottom",
+                  "title": {"text": "New EVs (all types)", "side": "top", "font": {"size": 11, "color": "#e6eff2"}},
+                  "tickfont": {"size": 10, "color": "#e6eff2"}, "bgcolor": "rgba(8,20,26,.72)", "outlinewidth": 0, "ypad": 8, "xpad": 8}))
     if selected and selected in names:
         fig.add_trace(go.Choroplethmap(
             geojson=geo, locations=[selected], featureidkey="properties.adm3_pcode", z=[1],
             colorscale=[[0, "rgba(0,0,0,0)"], [1, "rgba(0,0,0,0)"]], showscale=False, hoverinfo="skip",
-            marker_line_width=3, marker_line_color="#d62728"))
+            marker_line_width=3, marker_line_color="#ffffff" if dark else "#d62728"))
     center, zoom = ({"lon": 80.7, "lat": 7.8}, 6.6) if whole_island or not focus_codes else view_for(geo, focus_codes)
-    fig.update_layout(map_style=style, map_center=center, map_zoom=zoom, margin={"l": 0, "r": 0, "t": 0, "b": 0}, height=460)
+    fig.update_layout(map_style="carto-darkmatter" if dark else "open-street-map", map_center=center, map_zoom=zoom,
+                      margin={"l": 0, "r": 0, "t": 0, "b": 0}, height=height, paper_bgcolor="rgba(0,0,0,0)")
     return fig
