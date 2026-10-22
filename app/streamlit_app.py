@@ -23,6 +23,7 @@ import streamlit as st
 from matplotlib.ticker import MaxNLocator
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))   # so 'src' imports work when launched by streamlit
+from app.model_check import LABEL, LEARNED, mae_table  # noqa: E402
 from app.map_view import build_map, ds_values, load_crosswalk, load_geo, shape_names  # noqa: E402
 from src.data.census_ds import read_ds  # noqa: E402
 from src.models.forecast_v0 import load_district_totals, load_national_monthly, read_contract  # noqa: E402
@@ -32,6 +33,7 @@ from src.models.town_split import CLASSES, read_split  # noqa: E402
 POLICY_CSV = "data/external/policy_events_lk.csv"
 CENSUS_CSV = "data/external/census2024_ds_population.csv"
 GEO_DIR = "data/external/geo"
+TRAINED_CSV = "data/processed/trained_vs_baselines.csv"
 Row = dict[str, Any]
 
 GREEN, BLUE, RED, ORANGE, GREY = "#2e9e5b", "#1f77b4", "#d62728", "#f0a030", "#8a8f98"
@@ -285,6 +287,37 @@ def long_term(scen: list[Row], raw_dir: str, town: list[Row] | None) -> None:
                     f"Status `{scen[0]['status']}` · run {scen[0]['run_id']}")
 
 # ---------------------------------------------------------------- tab 2: next 4 months
+def model_chart(table: dict[str, tuple[float, int]], title: str) -> None:
+    items = sorted(table.items(), key=lambda t: t[1][0])
+    fig, ax = plt.subplots(figsize=(5.2, 3.0))
+    ax.barh([LABEL[m] for m, _ in items][::-1], [v[0] for _, v in items][::-1],
+            color=[ORANGE if m in LEARNED else BLUE for m, _ in items][::-1], height=0.62)
+    for i, (_, v) in enumerate(items[::-1]):
+        ax.text(v[0], i, f" {v[0]:,.0f}", va="center", fontsize=9)
+    ax.set_title(title, loc="left", fontsize=11)
+    ax.tick_params(labelsize=8)
+    ax.set_xlim(0, max(v[0] for _, v in items) * 1.18)
+    ax.grid(axis="x", alpha=0.25)
+    st.pyplot(fig)
+
+def model_check() -> None:
+    st.subheader("🧪 Model check")
+    if not Path(TRAINED_CSV).exists():
+        st.info("Not made yet. Run:  python -m src.models.trained_v0 --raw-dir data/raw")
+        return
+    tab = mae_table(TRAINED_CSV)
+    chips([("🔬 Walk-forward · no future data", "ok"), ("🟦 Rules", ""), ("🟧 Learned models", "warn")])
+    c1, c2 = st.columns(2)
+    with c1:
+        n = next(iter(tab["development"].values()))[1]
+        model_chart(tab["development"], f"Development ({n} months)")
+    with c2:
+        n = next(iter(tab["holdout"].values()))[1]
+        model_chart(tab["holdout"], f"2026 holdout ({n} months)")
+    best = min(tab["development"].items(), key=lambda t: t[1][0])[0]
+    st.caption(f"Average miss in new EVs, next month · lower is better · best in development: {LABEL[best]}. "
+               "Learned models did not clearly beat simple rules (very little high-volume data); the holdout has only a few months.")
+
 def short_term(rows: list[Row], raw_dir: str) -> None:
     nat = sorted((r for r in rows if r["level"] == "national"), key=lambda r: r["horizon_months"])
     dist_rows = [r for r in rows if r["level"] == "district"]
@@ -320,6 +353,7 @@ def short_term(rows: list[Row], raw_dir: str) -> None:
         st.subheader("🗺️ Where?")
         names, vals = top_with_selected([(r["district"], r["p50"]) for r in dist_rows if r["period"] == month], district)
         bars(names, vals, district)
+    model_check()
     with st.expander("ⓘ How this is made"):
         st.markdown(f"Method `{pick['method']}`: last observed month × growth ratios seen since 2023. District = national × its 2025 share. "
                     f"Status `{pick['status']}` · run {pick['run_id']} · contract v{pick['contract_version']}. "
