@@ -23,6 +23,7 @@ import streamlit as st
 from matplotlib.ticker import MaxNLocator
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))   # so 'src' imports work when launched by streamlit
+from app.map_view import build_map, ds_values, load_crosswalk, load_geo, shape_names  # noqa: E402
 from src.data.census_ds import read_ds  # noqa: E402
 from src.models.forecast_v0 import load_district_totals, load_national_monthly, read_contract  # noqa: E402
 from src.models.scenarios import read_scenarios  # noqa: E402
@@ -30,6 +31,7 @@ from src.models.town_split import CLASSES, read_split  # noqa: E402
 
 POLICY_CSV = "data/external/policy_events_lk.csv"
 CENSUS_CSV = "data/external/census2024_ds_population.csv"
+GEO_DIR = "data/external/geo"
 Row = dict[str, Any]
 
 GREEN, BLUE, RED, ORANGE, GREY = "#2e9e5b", "#1f77b4", "#d62728", "#f0a030", "#8a8f98"
@@ -126,6 +128,10 @@ def load_town(path: str) -> list[Row]:
 def load_census(path: str) -> list[Row]:
     return read_ds(path)
 
+@st.cache_data
+def load_map_files() -> tuple[dict[str, Any], dict[tuple[str, str], str]]:
+    return load_geo(f"{GEO_DIR}/lka_adm3_simple.geojson"), load_crosswalk(f"{GEO_DIR}/ds_crosswalk.csv")
+
 # ---------------------------------------------------------------- charts
 def month_chart(values: list[float], periods: list[str], observed: list[bool], nat: list[Row], month: str, events: bool) -> None:
     x = [to_num(p) for p in periods]
@@ -202,6 +208,20 @@ def town_tiles(town: list[Row], district: str, area: str, year: int, scenario: s
             tile(c, CLASS_ICON[c], by[c], CLASS_NAME[c])
     mix_bar(by)
 
+def map_section(town: list[Row], district: str, area: str, year: int, scenario: str) -> None:
+    if not Path(GEO_DIR, "lka_adm3_simple.geojson").exists():
+        st.info("Map files not found. Put them in data/external/geo/")
+        return
+    geo, cw = load_map_files()
+    st.subheader("🗺️ Map")
+    whole = st.toggle("Whole island", value=False, key="lt_whole")
+    focus = {code for (d, _), code in cw.items() if d == district}
+    selected = cw.get((district, area)) if area != "All areas" else None
+    fig = build_map(geo, ds_values(town, cw, year, scenario), shape_names(geo), focus, selected, whole)
+    st.plotly_chart(fig, width="stretch")
+    st.caption("Darker = more new EVs (estimate, all vehicle types). Red outline = selected area. "
+               "Boundaries: OCHA / Survey Department of Sri Lanka (2022, simplified). Map © OpenStreetMap contributors.")
+
 def long_term(scen: list[Row], raw_dir: str, town: list[Row] | None) -> None:
     nat = [r for r in scen if r["level"] == "national"]
     dist_rows = [r for r in scen if r["level"] == "district"]
@@ -239,6 +259,8 @@ def long_term(scen: list[Row], raw_dir: str, town: list[Row] | None) -> None:
 
     if town and area != "All areas":
         town_tiles(town, district, area, year, scenario)
+    if town:
+        map_section(town, district, area, year, scenario)
 
     left, right = st.columns([2, 1])
     with left:

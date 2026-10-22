@@ -1,0 +1,341 @@
+district_key,census_ds_name,geo_ds_name,adm3_pcode,match
+AMPARA,Dehiattakandiya,Dehiattakandiya,LK5203,exact
+AMPARA,Padiyathalawa,Padiyathalawa,LK5206,exact
+AMPARA,Mahaoya,Mahaoya,LK5209,exact
+AMPARA,Uhana,Uhana,LK5212,exact
+AMPARA,Ampara,Ampara,LK5215,exact
+AMPARA,Navithanveli,Navithanveli,LK5216,exact
+AMPARA,Kalmunai,Kalmunai,LK5221,exact
+AMPARA,Sainthamaruthu,Sainthamaruthu,LK5225,exact
+AMPARA,Irakkamam,Irakkamam,LK5234,exact
+AMPARA,Akkaraipattu,Akkaraipattu,LK5236,exact
+AMPARA,Damana,Damana,LK5242,exact
+AMPARA,Lahugala,Lahugala,LK5251,exact
+AMPARA,Samanthurai,Sammanthurai,LK5218,spelling
+AMPARA,Thirukkovil,Tirukkovil,LK5245,spelling
+AMPARA,Ninthavur,Nintavur,LK5230,spelling
+AMPARA,Alayadiwembu,Alayadivembu,LK5239,spelling
+AMPARA,Addalachchenai,Addalaichenai,LK5233,spelling
+AMPARA,Pothuvil,Pottuvil,LK5248,spelling
+AMPARA,Karaitheevu,Karaitivu,LK5227,spelling
+AMPARA,Kalmunai North Sub,Kalmunai,LK5221,merged_into_shape
+ANURADHAPURA,Padaviya,Padaviya,LK7103,exact
+ANURADHAPURA,Kebithigollewa,Kebithigollewa,LK7106,exact
+ANURADHAPURA,Medawachchiya,Medawachchiya,LK7109,exact
+ANURADHAPURA,Mahawilachchiya,Mahawilachchiya,LK7112,exact
+ANURADHAPURA,Nuwaragam Palatha Central,Nuwaragam Palatha Central,LK7115,exact
+ANURADHAPURA,Rambewa,Rambewa,LK7118,exact
+ANURADHAPURA,Kahatagasdigiliya,Kahatagasdigiliya,LK7121,exact
+ANURADHAPURA,Mihinthale,Mihinthale,LK7130,exact
+ANURADHAPURA,Nuwaragam Palatha East,Nuwaragam Palatha East,LK7133,exact
+ANURADHAPURA,Nachchaduwa,Nachchaduwa,LK7136,exact
+ANURADHAPURA,Nochchiyagama,Nochchiyagama,LK7139,exact
+ANURADHAPURA,Rajanganaya,Rajanganaya,LK7142,exact
+ANURADHAPURA,Thalawa,Thalawa,LK7148,exact
+ANURADHAPURA,Thirappane,Thirappane,LK7151,exact
+ANURADHAPURA,Kekirawa,Kekirawa,LK7154,exact
+ANURADHAPURA,Palugaswewa,Palugaswewa,LK7157,exact
+ANURADHAPURA,Ipalogama,Ipalogama,LK7160,exact
+ANURADHAPURA,Galnewa,Galnewa,LK7163,exact
+ANURADHAPURA,Palagala,Palagala,LK7166,exact
+ANURADHAPURA,Galenbindunuwewa,Galenbidunuwewa,LK7127,spelling
+ANURADHAPURA,Thambuttegama,Thambuththegama,LK7145,spelling
+ANURADHAPURA,Horowpothana,Horowpathana,LK7124,spelling
+BADULLA,Mahiyanganaya,Mahiyanganaya,LK8103,exact
+BADULLA,Rideemaliyadda,Rideemaliyadda,LK8106,exact
+BADULLA,Soranathota,Soranathota,LK8115,exact
+BADULLA,Passara,Passara,LK8118,exact
+BADULLA,Lunugala,Lunugala,LK8119,exact
+BADULLA,Badulla,Badulla,LK8121,exact
+BADULLA,Hali-Ela,Hali-Ela,LK8124,exact
+BADULLA,Uva Paranagama,Uvaparanagama,LK8127,exact
+BADULLA,Welimada,Welimada,LK8130,exact
+BADULLA,Bandarawela,Bandarawela,LK8133,exact
+BADULLA,Ella,Ella,LK8136,exact
+BADULLA,Haputale,Haputale,LK8139,exact
+BADULLA,Haldummulla,Haldummulla,LK8142,exact
+BADULLA,Meegahakivula,Meegahakiula,LK8109,spelling
+BADULLA,Kandaketiya,Kandeketiya,LK8112,spelling
+BATTICALOA,Koralai Pattu Central,Koralai Pattu Central,LK5104,exact
+BATTICALOA,Eravur Pattu,Eravur Pattu,LK5115,exact
+BATTICALOA,Eravur Town,Eravur Town,LK5139,exact
+BATTICALOA,Manmunai North,Manmunai North,LK5118,exact
+BATTICALOA,Manmunai West,Manmunai West,LK5121,exact
+BATTICALOA,Kattankudy,Kattankudy,LK5124,exact
+BATTICALOA,Manmunai South-West,Manmunai South West,LK5130,exact
+BATTICALOA,Porativu Pattu,Porativu Pattu,LK5133,exact
+BATTICALOA,Manmunai South & Eruvil pattu,Manmunai South & Eruvil Pattu,LK5136,exact
+BATTICALOA,Koralai Pattu South (Kiran),Koralai Pattu South,LK5110,spelling
+BATTICALOA,Koralai Pattu North (Vaharai),Koralai Pattu North,LK5103,spelling
+BATTICALOA,Koralai Pattu West (Oddamavadi),Koralai Pattu West,LK5106,spelling
+BATTICALOA,Manmunai Pattu (Araipattai),Manmunai Pattu,LK5127,spelling
+BATTICALOA,Koralai Pattu (Valachchenai),Koralai Pattu,LK5109,spelling
+COLOMBO,Colombo,Colombo,LK1103,exact
+COLOMBO,Kolonnawa,Kolonnawa,LK1106,exact
+COLOMBO,Kaduwela,Kaduwela,LK1109,exact
+COLOMBO,Homagama,Homagama,LK1112,exact
+COLOMBO,Seethawaka,Seethawaka,LK1115,exact
+COLOMBO,Padukka,Padukka,LK1118,exact
+COLOMBO,Maharagama,Maharagama,LK1121,exact
+COLOMBO,Sri Jayawardanapura Kotte,Sri Jayawardanapura Kotte,LK1124,exact
+COLOMBO,Thimbirigasyaya,Thimbirigasyaya,LK1127,exact
+COLOMBO,Dehiwala,Dehiwala,LK1130,exact
+COLOMBO,Ratmalana,Ratmalana,LK1131,exact
+COLOMBO,Moratuwa,Moratuwa,LK1133,exact
+COLOMBO,Kesbewa,Kesbewa,LK1136,exact
+GALLE,Bentota,Bentota,LK3103,exact
+GALLE,Balapitiya,Balapitiya,LK3106,exact
+GALLE,Karandeniya,Karandeniya,LK3109,exact
+GALLE,Elpitiya,Elpitiya,LK3112,exact
+GALLE,Niyagama,Niyagama,LK3115,exact
+GALLE,Thawalama,Thawalama,LK3118,exact
+GALLE,Neluwa,Neluwa,LK3121,exact
+GALLE,Nagoda,Nagoda,LK3124,exact
+GALLE,Baddegama,Baddegama,LK3127,exact
+GALLE,Wanduramba,Wanduramba,LK3157,exact
+GALLE,Ambalangoda,Ambalangoda,LK3133,exact
+GALLE,Madampagama,Madampagama,LK3160,exact
+GALLE,Hikkaduwa,Hikkaduwa,LK3136,exact
+GALLE,Rathgama,Rathgama,LK3163,exact
+GALLE,Bope-Poddala,Bope-Poddala,LK3142,exact
+GALLE,Akmeemana,Akmeemana,LK3145,exact
+GALLE,Yakkalamulla,Yakkalamulla,LK3148,exact
+GALLE,Imaduwa,Imaduwa,LK3151,exact
+GALLE,Habaraduwa,Habaraduwa,LK3154,exact
+GALLE,Welivitiya-Divithura,Welivitiya-Divitura,LK3130,spelling
+GALLE,Gonapeenuwala,Gonapinuwala,LK3134,spelling
+GALLE,Galle Four Gravets,Galle 4 Gravets,LK3139,spelling
+GAMPAHA,Negombo,Negombo,LK1203,exact
+GAMPAHA,Katana,Katana,LK1206,exact
+GAMPAHA,Divulapitiya,Divulapitiya,LK1209,exact
+GAMPAHA,Mirigama,Mirigama,LK1212,exact
+GAMPAHA,Minuwangoda,Minuwangoda,LK1215,exact
+GAMPAHA,Wattala,Wattala,LK1218,exact
+GAMPAHA,Ja-Ela,Ja Ela,LK1221,exact
+GAMPAHA,Gampaha,Gampaha,LK1224,exact
+GAMPAHA,Attanagalla,Attanagalla,LK1227,exact
+GAMPAHA,Dompe,Dompe,LK1230,exact
+GAMPAHA,Mahara,Mahara,LK1233,exact
+GAMPAHA,Kelaniya,Kelaniya,LK1236,exact
+GAMPAHA,Biyagama,Biyagama,LK1239,exact
+HAMBANTOTA,Sooriyawewa,Sooriyawewa,LK3303,exact
+HAMBANTOTA,Thissamaharama,Thissamaharama,LK3309,exact
+HAMBANTOTA,Hambantota,Hambantota,LK3312,exact
+HAMBANTOTA,Ambalantota,Ambalantota,LK3315,exact
+HAMBANTOTA,Angunakolapelessa,Angunakolapelessa,LK3318,exact
+HAMBANTOTA,Weeraketiya,Weeraketiya,LK3321,exact
+HAMBANTOTA,Katuwana,Katuwana,LK3324,exact
+HAMBANTOTA,Walasmulla,Walasmulla,LK3325,exact
+HAMBANTOTA,Okewela,Okewela,LK3327,exact
+HAMBANTOTA,Beliatta,Beliatta,LK3330,exact
+HAMBANTOTA,Tangalle,Tangalle,LK3333,exact
+HAMBANTOTA,Lunugamvehera,Lunugamwehera,LK3306,spelling
+JAFFNA,Karainagar,Karainagar,LK4104,exact
+JAFFNA,Valikamam West (Chankanai),Valikamam West (Chankanai),LK4106,exact
+JAFFNA,Valikamam South-West (Sandilipay),Valikamam South West (Sandilipay),LK4109,exact
+JAFFNA,Valikamam South (Uduvil),Valikamam South (Uduvil),LK4115,exact
+JAFFNA,Valikamam East (Kopay),Valikamam East (Kopay),LK4118,exact
+JAFFNA,Vadamaradchi North (Point Pedro),Vadamaradchi North (Point Pedro),LK4127,exact
+JAFFNA,Thenmaradchi (Chavakachcheri),Thenmaradchi (Chavakachcheri),LK4130,exact
+JAFFNA,Nallur,Nallur,LK4133,exact
+JAFFNA,Jaffna,Jaffna,LK4136,exact
+JAFFNA,Delft,Delft,LK4142,exact
+JAFFNA,Island South (Velanai),Islands South (Velanai),LK4139,spelling
+JAFFNA,Island North (Kayts),Islands North (Kayts),LK4103,spelling
+JAFFNA,Vadamaradchi South-West (Karaveddy),Vadamaradchchi South-West (Karaveddy),LK4121,spelling
+JAFFNA,Vadamaradchi East,Vadamaradchchi East,LK4124,spelling
+JAFFNA,Valikamam North (Tellipallai),Valikamam North (Thllippalai),LK4112,spelling
+KALUTARA,Panadura,Panadura,LK1303,exact
+KALUTARA,Bandaragama,Bandaragama,LK1306,exact
+KALUTARA,Horana,Horana,LK1309,exact
+KALUTARA,Ingiriya,Ingiriya,LK1310,exact
+KALUTARA,Bulathsinhala,Bulathsinhala,LK1312,exact
+KALUTARA,Madurawala,Madurawala,LK1315,exact
+KALUTARA,Millaniya,Millaniya,LK1318,exact
+KALUTARA,Kalutara,Kalutara,LK1321,exact
+KALUTARA,Beruwala,Beruwala,LK1324,exact
+KALUTARA,Dodangoda,Dodangoda,LK1327,exact
+KALUTARA,Agalawatta,Agalawatta,LK1333,exact
+KALUTARA,Palindanuwara,Palindanuwara,LK1336,exact
+KALUTARA,Mathugama,Matugama,LK1330,spelling
+KALUTARA,Walallavita,Walallawita,LK1339,spelling
+KANDY,Akurana,Akurana,LK2109,exact
+KANDY,Pathadumbara,Pathadumbara,LK2112,exact
+KANDY,Panvila,Panvila,LK2115,exact
+KANDY,Minipe,Minipe,LK2121,exact
+KANDY,Medadumbara,Medadumbara,LK2124,exact
+KANDY,Kundasale,Kundasale,LK2127,exact
+KANDY,Harispattuwa,Harispattuwa,LK2133,exact
+KANDY,Hatharaliyadda,Hatharaliyadda,LK2134,exact
+KANDY,Yatinuwara,Yatinuwara,LK2136,exact
+KANDY,Udunuwara,Udunuwara,LK2139,exact
+KANDY,Doluwa,Doluwa,LK2142,exact
+KANDY,Pathahewaheta,Pathahewaheta,LK2145,exact
+KANDY,Deltota,Deltota,LK2148,exact
+KANDY,Udapalatha,Udapalatha,LK2151,exact
+KANDY,Ganga Ihala Korale,Ganga Ihala Korale,LK2154,exact
+KANDY,Pasbage Korale,Pasbagekorale,LK2157,exact
+KANDY,Thumpane,Tumpane,LK2103,spelling
+KANDY,Udadumbara,Ududumbara,LK2118,spelling
+KANDY,Pujapitiya,Poojapitiya,LK2106,spelling
+KANDY,Kandy Four Gravets & Gangawata Korale,Gangawata Korale,LK2130,spelling
+KEGALLE,Rambukkana,Rambukkana,LK9203,exact
+KEGALLE,Mawanella,Mawanella,LK9206,exact
+KEGALLE,Kegalle,Kegalle,LK9212,exact
+KEGALLE,Galigamuwa,Galigamuwa,LK9215,exact
+KEGALLE,Warakapola,Warakapola,LK9218,exact
+KEGALLE,Ruwanwella,Ruwanwella,LK9221,exact
+KEGALLE,Deraniyagala,Deraniyagala,LK9233,exact
+KEGALLE,Yatiyanthota,Yatiyantota,LK9227,spelling
+KEGALLE,Bulathkohupitiya,Bulathkohipitiya,LK9224,spelling
+KEGALLE,Dehiovita,Dehiowita,LK9230,spelling
+KEGALLE,Aranayaka,Aranayake,LK9209,spelling
+KILINOCHCHI,Pachchilaipalli,Pachchilaipalli,LK4503,exact
+KILINOCHCHI,Kandavalai,Kandavalai,LK4506,exact
+KILINOCHCHI,Karachchi,Karachchi,LK4509,exact
+KILINOCHCHI,Poonakary,Poonakary,LK4512,exact
+KURUNEGALA,Giribawa,Giribawa,LK6103,exact
+KURUNEGALA,Galgamuwa,Galgamuwa,LK6106,exact
+KURUNEGALA,Ehetuwewa,Ehetuwewa,LK6109,exact
+KURUNEGALA,Ambanpola,Ambanpola,LK6112,exact
+KURUNEGALA,Rasnayakapura,Rasnayakapura,LK6118,exact
+KURUNEGALA,Nikaweratiya,Nikaweratiya,LK6121,exact
+KURUNEGALA,Maho,Maho,LK6124,exact
+KURUNEGALA,Ibbagamuwa,Ibbagamuwa,LK6130,exact
+KURUNEGALA,Ganewatta,Ganewatta,LK6133,exact
+KURUNEGALA,Wariyapola,Wariyapola,LK6136,exact
+KURUNEGALA,Kobeigane,Kobeigane,LK6139,exact
+KURUNEGALA,Bingiriya,Bingiriya,LK6142,exact
+KURUNEGALA,Panduwasnuwara West,Panduwasnuwara West,LK6145,exact
+KURUNEGALA,Panduwasnuwara East,Panduwasnuwara East,LK6148,exact
+KURUNEGALA,Bamunakotuwa,Bamunakotuwa,LK6149,exact
+KURUNEGALA,Maspotha,Maspotha,LK6151,exact
+KURUNEGALA,Kurunegala,Kurunegala,LK6154,exact
+KURUNEGALA,Mallawapitiya,Mallawapitiya,LK6157,exact
+KURUNEGALA,Mawathagama,Mawathagama,LK6160,exact
+KURUNEGALA,Rideegama,Rideegama,LK6163,exact
+KURUNEGALA,Kuliyapitiya East,Kuliyapitiya East,LK6169,exact
+KURUNEGALA,Kuliyapitiya West,Kuliyapitiya West,LK6172,exact
+KURUNEGALA,Udubaddawa,Udubaddawa,LK6175,exact
+KURUNEGALA,Pannala,Pannala,LK6178,exact
+KURUNEGALA,Narammala,Narammala,LK6181,exact
+KURUNEGALA,Alawwa,Alawwa,LK6184,exact
+KURUNEGALA,Polgahawela,Polgahawela,LK6187,exact
+KURUNEGALA,Weerambugedara,Weerabugedara,LK6166,spelling
+KURUNEGALA,Polpithigama,Polpitigama,LK6127,spelling
+KURUNEGALA,Kotavehera,Kotawehera,LK6115,spelling
+MANNAR,Mannar Town,Mannar Town,LK4203,exact
+MANNAR,Manthai West,Manthai West,LK4206,exact
+MANNAR,Madhu,Madhu,LK4209,exact
+MANNAR,Musali,Musali,LK4215,exact
+MANNAR,Nanattan,Nanaddan,LK4212,spelling
+MATALE,Galewela,Galewela,LK2203,exact
+MATALE,Dambulla,Dambulla,LK2206,exact
+MATALE,Naula,Naula,LK2209,exact
+MATALE,Pallepola,Pallepola,LK2212,exact
+MATALE,Yatawatta,Yatawatta,LK2215,exact
+MATALE,Matale,Matale,LK2218,exact
+MATALE,Wilgamuwa,Wilgamuwa,LK2227,exact
+MATALE,Rattota,Rattota,LK2230,exact
+MATALE,Ukuwela,Ukuwela,LK2233,exact
+MATALE,Ambanganga Korale,Ambanganga,LK2221,spelling
+MATALE,Laggala-Pallegama,Laggala,LK2224,spelling
+MATARA,Kotapola,Kotapola,LK3206,exact
+MATARA,Pasgoda,Pasgoda,LK3209,exact
+MATARA,Mulatiyana,Mulatiyana,LK3212,exact
+MATARA,Athuraliya,Athuraliya,LK3215,exact
+MATARA,Akuressa,Akuressa,LK3218,exact
+MATARA,Welipitiya,Welipitiya,LK3221,exact
+MATARA,Malimbada,Malimbada,LK3224,exact
+MATARA,Hakmana,Hakmana,LK3230,exact
+MATARA,Kirinda Puhulwella,Kirinda Puhulwella,LK3233,exact
+MATARA,Thihagoda,Thihagoda,LK3236,exact
+MATARA,Weligama,Weligama,LK3239,exact
+MATARA,Matara Four Gravets,Matara Four Gravets,LK3242,exact
+MATARA,Devinuwara,Devinuwara,LK3245,exact
+MATARA,Kamburupitiya,Kaburupitiya,LK3227,spelling
+MATARA,Dickwella,Dikwella,LK3248,spelling
+MATARA,Pitabeddara,Pitabaddara,LK3203,spelling
+MONERAGALA,Bibile,Bibile,LK8203,exact
+MONERAGALA,Madulla,Madulla,LK8206,exact
+MONERAGALA,Medagama,Medagama,LK8209,exact
+MONERAGALA,Siyambalanduwa,Siyambalanduwa,LK8212,exact
+MONERAGALA,Badalkumbura,Badalkumbura,LK8218,exact
+MONERAGALA,Wellawaya,Wellawaya,LK8221,exact
+MONERAGALA,Buttala,Buttala,LK8224,exact
+MONERAGALA,Katharagama,Katharagama,LK8227,exact
+MONERAGALA,Sevanagala,Sevanagala,LK8233,exact
+MONERAGALA,Thanamalvila,Thanamalwila,LK8230,spelling
+MONERAGALA,Moneragala,Monaragala,LK8215,spelling
+MULLAITIVU,Thunukkai,Thunukkai,LK4403,exact
+MULLAITIVU,Manthai East,Manthai East,LK4406,exact
+MULLAITIVU,Puthukkudiyiruppu,Puthukkudiyiruppu,LK4409,exact
+MULLAITIVU,Oddusuddan,Oddusuddan,LK4412,exact
+MULLAITIVU,Maritimepattu,Maritimepattu,LK4415,exact
+MULLAITIVU,Welioya,Welioya,LK4418,exact
+NUWARA ELIYA,Kothmale West,Kothmale West,LK2321,exact
+NUWARA ELIYA,Kothmale East,Kothmale East,LK2303,exact
+NUWARA ELIYA,Mathurata,Mathurata,LK2318,exact
+NUWARA ELIYA,Walapane,Walapane,LK2324,exact
+NUWARA ELIYA,Nildandahinna,Nildandahinna,LK2309,exact
+NUWARA ELIYA,Nuwara Eliya,Nuwara Eliya,LK2312,exact
+NUWARA ELIYA,Norwood,Norwood,LK2330,exact
+NUWARA ELIYA,Hanguranketha,Hanguranketa,LK2306,spelling
+NUWARA ELIYA,Thalawakelle,Thalawakele,LK2327,spelling
+NUWARA ELIYA,Ambagamuwa Koralaya,Ambagamuwa Korale,LK2315,spelling
+POLONNARUWA,Medirigiriya,Medirigiriya,LK7206,exact
+POLONNARUWA,Lankapura,Lankapura,LK7209,exact
+POLONNARUWA,Welikanda,Welikanda,LK7210,exact
+POLONNARUWA,Dimbulagala,Dimbulagala,LK7212,exact
+POLONNARUWA,Thamankaduwa,Thamankaduwa,LK7215,exact
+POLONNARUWA,Elahera,Elahera,LK7218,exact
+POLONNARUWA,Hingurakgoda,Higurakgoda,LK7203,spelling
+PUTTALAM,Kalpitiya,Kalpitiya,LK6203,exact
+PUTTALAM,Karuwalagaswewa,Karuwalagaswewa,LK6209,exact
+PUTTALAM,Nawagattegama,Nawagattegama,LK6212,exact
+PUTTALAM,Puttalam,Puttalam,LK6215,exact
+PUTTALAM,Mundel,Mundel,LK6218,exact
+PUTTALAM,Mahakumbukkadawala,Mahakumbukkadawala,LK6221,exact
+PUTTALAM,Anamaduwa,Anamaduwa,LK6224,exact
+PUTTALAM,Pallama,Pallama,LK6227,exact
+PUTTALAM,Arachchikattuwa,Arachchikattuwa,LK6230,exact
+PUTTALAM,Chilaw,Chilaw,LK6233,exact
+PUTTALAM,Madampe,Madampe,LK6236,exact
+PUTTALAM,Mahawewa,Mahawewa,LK6239,exact
+PUTTALAM,Nattandiya,Nattandiya,LK6242,exact
+PUTTALAM,Wennappuwa,Wennappuwa,LK6245,exact
+PUTTALAM,Dankotuwa,Dankotuwa,LK6248,exact
+PUTTALAM,Vanathawilluwa,Vanathavilluwa,LK6206,spelling
+RATNAPURA,Eheliyagoda,Eheliyagoda,LK9103,exact
+RATNAPURA,Kuruvita,Kuruvita,LK9106,exact
+RATNAPURA,Kiriella,Kiriella,LK9109,exact
+RATNAPURA,Ratnapura,Ratnapura,LK9112,exact
+RATNAPURA,Imbulpe,Imbulpe,LK9115,exact
+RATNAPURA,Balangoda,Balangoda,LK9118,exact
+RATNAPURA,Opanayake,Opanayake,LK9121,exact
+RATNAPURA,Pelmadulla,Pelmadulla,LK9124,exact
+RATNAPURA,Elapatha,Elapatha,LK9127,exact
+RATNAPURA,Ayagama,Ayagama,LK9130,exact
+RATNAPURA,Kalawana,Kalawana,LK9133,exact
+RATNAPURA,Nivithigala,Nivithigala,LK9136,exact
+RATNAPURA,Godakawela,Godakawela,LK9142,exact
+RATNAPURA,Weligepola,Weligepola,LK9145,exact
+RATNAPURA,Embilipitiya,Embilipitiya,LK9148,exact
+RATNAPURA,Kolonna,Kolonna,LK9151,exact
+RATNAPURA,Kahawatta,Kahawattha,LK9139,spelling
+RATNAPURA,Kaltota,Kalthota,LK9154,spelling
+TRINCOMALEE,Padavi Sri Pura,Padavi Sri Pura,LK5303,exact
+TRINCOMALEE,Gomarankadawala,Gomarankadawala,LK5309,exact
+TRINCOMALEE,Morawewa,Morawewa,LK5312,exact
+TRINCOMALEE,Thambalagamuwa,Thambalagamuwa,LK5318,exact
+TRINCOMALEE,Kinniya,Kinniya,LK5324,exact
+TRINCOMALEE,Seruvila,Seruvila,LK5330,exact
+TRINCOMALEE,Kanthale,Kantale,LK5321,spelling
+TRINCOMALEE,Kuchchaveli,Kuchchaweli,LK5306,spelling
+TRINCOMALEE,Muttur,Muthur,LK5327,spelling
+TRINCOMALEE,Trincomalee Town and Gravets,Town & Gravets,LK5315,spelling
+TRINCOMALEE,Verugal (Eachchilampattu),Verugal,LK5333,spelling
+VAVUNIYA,Vavuniya North,Vavuniya North,LK4303,exact
+VAVUNIYA,Vavuniya South,Vavuniya South,LK4306,exact
+VAVUNIYA,Vavuniya,Vavuniya,LK4309,exact
+VAVUNIYA,Vengalacheddikulam,Vengalacheddikulam,LK4312,exact
